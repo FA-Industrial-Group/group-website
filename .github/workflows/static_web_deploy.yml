@@ -23,12 +23,12 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-            az storage blob upload-batch --account-name firstatlanticgroup --auth-mode key -d '$web' -s .
+            az storage blob upload-batch --account-name firstatlanticgroup --auth-mode key -d '$web' -s ./build
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
         inlineScript: |
-           az cdn endpoint purge --content-paths  "/build/*" --profile-name "firstatlanticgroup-cdn" --name "https://firstatlanticindustries.azureedge.net" --resource-group "firstatlantic-group"
+           az cdn endpoint purge --content-paths  "/*" --profile-name "firstatlanticgroup-cdn" --name "https://firstatlanticindustries.azureedge.net" --resource-group "firstatlantic-group"
 
   # Azure logout
     - name: logout
