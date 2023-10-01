@@ -1,6 +1,4 @@
 import React from "react";
-import ProjectsAndEngineeringItem from "../../Home/ProjectsAndEngineering";
-import { title } from "process";
 
 const Projects: { title: string, description: string, metrics: Record<string, number>, img: string, location: string }[] = [
     {
